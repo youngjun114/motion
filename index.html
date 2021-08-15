@@ -10,8 +10,32 @@
       href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="style.css" />
     <title>Motion</title>
     <script type="module" defer src="./build/main.js"></script>
   </head>
-  <body></body>
+  <body>
+    <header id="header">
+      <h1 class="header__title">MOTION</h1>
+      <ul class="header__navbar">
+        <li><button class="navbar__item">Image</button></li>
+        <li><button class="navbar__item">Video</button></li>
+        <li><button class="navbar__item">Note</button></li>
+        <li><button class="navbar__item">Task</button></li>
+      </ul>
+    </header>
+    <main id="content">
+      <section id="image__card">
+        <img
+          src="https://picsum.photos/500/282"
+          alt="random"
+          class="content__img"
+        />
+        <div class="card__desc">
+          <h2>Some random image</h2>
+          <p>This is some random image</p>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>

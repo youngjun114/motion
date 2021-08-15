@@ -2,6 +2,7 @@
   /* colors */
   --color-bg: #111111;
   --color-orange: hsl(5, 98%, 60%);
+  --color-orange-hover: hsl(5, 98%, 70%);
   --color-white: #ffffff;
   --color-dark-white: #bdbdbd;
   --color-grey: #616161;
@@ -51,10 +52,15 @@ a:active {
   color: var(--color-primary-white);
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   font-family: 'Work Sans', sans-serif;
   cursor: default;
-  overflow-x: hidden;
+  border: 1px solid white;
+  height: 100vh;
 }
 
 h1 {
@@ -93,4 +99,60 @@ span {
 
 body {
   overflow-x: hidden;
+  background-color: var(--color-bg);
+}
+
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  padding: 0 2em;
+  border: 1px solid white;
+}
+
+.header__title {
+  color: var(--color-orange);
+  letter-spacing: -2.5px;
+}
+
+.header__navbar {
+  display: flex;
+  gap: 16px;
+}
+
+.navbar__item {
+  background-color: var(--color-orange);
+  color: var(--color-white);
+  padding: 8px 24px;
+  font-size: var(--font-medium);
+  border-radius: 25px;
+}
+
+.navbar__item:hover {
+  background-color: var(--color-orange-hover);
+}
+
+#content {
+  margin-top: 40px;
+}
+
+section {
+  border: 1px solid white;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+#image__card {
+  display: flex;
+}
+
+.content__img {
+  object-fit: contain;
+  max-width: 50%;
+  flex-basis: 50%;
+}
+
+.card__desc {
+  flex-basis: 50%;
 }
