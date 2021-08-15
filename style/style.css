@@ -146,13 +146,18 @@ section {
   margin: 0 auto;
 }
 
-#image__card {
+.card {
   display: flex;
 }
 
-.content__img {
+.card__image-container {
+  flex-basis: 50%;
+}
+
+.image__thumbnail {
   object-fit: contain;
-  max-width: 50%;
+  min-width: 100%;
+  min-height: 100%;
   flex-basis: 50%;
 }
 
