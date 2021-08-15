@@ -7,12 +7,12 @@ import { BaseComponent } from '../component.js';
 export class NoteComponent extends BaseComponent<HTMLElement> {
   constructor(title: string, body: string) {
     super(
-      `<div class="content__left">
+      `<section class="content"><div class="content__left">
           <h2 class="note__title"></h2>
         </div>
         <div class="content__right">
           <p class="note__body"></p>
-        </div>`
+        </div></section>`
     );
 
     const hElement = this.element.querySelector(
