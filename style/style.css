@@ -2,12 +2,14 @@
   /* colors */
   --color-bg: #111111;
   --color-orange: hsl(5, 98%, 60%);
-  --color-orange-hover: hsl(5, 98%, 70%);
+  --color-orange-hover: hsl(5, 98%, 40%);
   --color-white: #ffffff;
   --color-dark-white: #bdbdbd;
   --color-grey: #616161;
   --color-light-grey: #7c7979;
   --color-dark-grey: #4d4d4d;
+  --color-dialog-bg: rgba(18, 18, 18, 0.9);
+  --color-dialog-overlay: rgba(0, 0, 0, 0.5);
 
   /* Font size */
   --font-large: 48px;
@@ -59,7 +61,6 @@ html {
 body {
   font-family: 'Work Sans', sans-serif;
   cursor: default;
-  border: 1px solid white;
   height: 100vh;
 }
 
@@ -97,6 +98,10 @@ span {
   color: var(--color-white);
 }
 
+dialog {
+  border: none;
+}
+
 body {
   overflow-x: hidden;
   background-color: var(--color-bg);
@@ -129,6 +134,7 @@ body {
   text-transform: uppercase;
   letter-spacing: -2px;
   user-select: none;
+  transition: all 150ms ease;
 }
 
 .navbar__item:hover {
@@ -212,4 +218,51 @@ body {
 
 .page {
   color: var(--color-white);
+}
+
+/* Dialog */
+.dialog {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  font-size: var(--font-regular);
+  background-color: var(--color-dialog-overlay);
+}
+
+.dialog__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 32em;
+  background-color: var(--color-dialog-bg);
+}
+
+.dialog__close-btn i {
+  color: var(--color-white);
+  font-size: var(--font-medium);
+  transition: all 150ms ease-in;
+}
+
+.dialog__close-btn:hover i {
+  color: var(--color-orange-hover);
+}
+
+.dialog__submit-btn {
+  color: var(--color-white);
+  font-size: var(--font-medium);
+  background-color: var(--color-orange);
+  padding: 8px 24px;
+  border-radius: 5px;
+  transition: all 150ms ease;
+}
+
+.dialog__submit-btn:hover {
+  background-color: var(--color-orange-hover);
 }
