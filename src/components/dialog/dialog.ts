@@ -4,6 +4,16 @@ import { Composable } from '../page/page.js';
 type OnCloseListener = () => void;
 type OnSubmitListener = () => void;
 
+export interface MediaData {
+  readonly title: string;
+  readonly url: string;
+}
+
+export interface TextData {
+  readonly title: string;
+  readonly body: string;
+}
+
 export class InputDialog
   extends BaseComponent<HTMLElement>
   implements Composable
@@ -16,7 +26,7 @@ export class InputDialog
       `<dialog class="dialog">
           <div class="dialog__container">
             <button class="dialog__close-btn"><i class="fas fa-times"></i></button>
-            <div id="dialog__body""></div>
+            <div class="dialog__body""></div>
             <button class="dialog__submit-btn">Add</button>
             </div>
         </dialog>`
@@ -46,7 +56,7 @@ export class InputDialog
   }
 
   addChild(child: Component) {
-    const body = this.element.querySelector('#dialog__body')! as HTMLElement;
+    const body = this.element.querySelector('.dialog__body')! as HTMLElement;
     child.attachTo(body);
   }
 }
