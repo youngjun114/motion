@@ -156,6 +156,7 @@ body {
 }
 
 .item__header-remove {
+  padding: 8px;
 }
 
 .item__header-remove i {

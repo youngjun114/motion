@@ -5,13 +5,21 @@ export interface Composable {
   addChild(child: Component): void;
 }
 
+interface SectionContainer extends Component, Composable {
+  setOnRemoveListener(listener: OnRemoveListener): void;
+}
+
 type OnRemoveListener = () => void;
+
+type SectionContainerConstructor = {
+  new (): SectionContainer;
+};
 
 import { BaseComponent, Component } from '../component.js';
 
-class PageItemComponent
+export class PageItemComponent
   extends BaseComponent<HTMLElement>
-  implements Composable
+  implements SectionContainer
 {
   private removeListener?: OnRemoveListener;
 
@@ -28,6 +36,7 @@ class PageItemComponent
     const removeBtn = this.element.querySelector(
       '.item__header-remove'
     )! as HTMLElement;
+
     removeBtn.onclick = () => {
       this.removeListener && this.removeListener();
     };
@@ -49,12 +58,12 @@ export class PageComponent
   extends BaseComponent<HTMLUListElement>
   implements Composable
 {
-  constructor() {
+  constructor(private pageItemConstructor: SectionContainerConstructor) {
     super('<ul class="page"></ul>');
   }
 
   addChild(section: Component) {
-    const item = new PageItemComponent();
+    const item = new this.pageItemConstructor();
     item.addChild(section);
     item.attachTo(this.element, 'beforeend');
     item.setOnRemoveListener(() => {
