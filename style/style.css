@@ -124,17 +124,20 @@ body {
 .navbar__item {
   background-color: var(--color-orange);
   color: var(--color-white);
-  padding: 8px 24px;
   font-size: var(--font-medium);
+  padding: 8px 24px;
   border-radius: 25px;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+  user-select: none;
 }
 
 .navbar__item:hover {
   background-color: var(--color-orange-hover);
 }
 
-#content {
-  margin-top: 40px;
+.document {
+  margin: 40px 40px;
 }
 
 section {
@@ -155,4 +158,9 @@ section {
 
 .card__desc {
   flex-basis: 50%;
+  margin: 12px;
+}
+
+.page {
+  color: var(--color-white);
 }
