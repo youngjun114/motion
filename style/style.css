@@ -141,17 +141,24 @@ body {
 }
 
 section {
-  border: 1px solid white;
+  border: 1px solid var(--color-dark-grey);
   max-width: 1280px;
-  margin: 0 auto;
+  margin: 24px auto;
 }
 
 .card {
   display: flex;
 }
 
-.card__image-container {
+.card__left {
   flex-basis: 50%;
+}
+
+.card__video {
+  min-width: 100%;
+  min-height: 100%;
+  height: auto;
+  border: none;
 }
 
 .image__thumbnail {
@@ -161,7 +168,7 @@ section {
   flex-basis: 50%;
 }
 
-.card__desc {
+.card__right {
   flex-basis: 50%;
   margin: 12px;
 }

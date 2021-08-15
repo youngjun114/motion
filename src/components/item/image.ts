@@ -7,23 +7,21 @@ import { BaseComponent } from '../component.js';
 export class ImageComponent extends BaseComponent<HTMLElement> {
   constructor(title: string, url: string) {
     super(
-      `<section class="card">
-        <div class="card__image-container">
-          <img class="image__thumbnail"/>
-        </div>
-        <div class="card__desc">
-          <h2 class="card__title">Some random image</h2>
-        </div>
-      </section>`
+      `<div class="content__left">
+          <img class="content__image"/>
+      </div>
+      <div class="content__right">
+        <h2 class="content__title"></h2>
+      </div>`
     );
     const imageElement = this.element.querySelector(
-      '.image__thumbnail'
+      '.content__image'
     )! as HTMLImageElement;
     imageElement.src = url;
     imageElement.alt = title;
 
     const titleElement = this.element.querySelector(
-      '.card__title'
+      '.content__title'
     )! as HTMLHeadingElement;
     titleElement.textContent = title;
   }
