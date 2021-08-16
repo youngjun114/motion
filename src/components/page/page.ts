@@ -26,11 +26,8 @@ export class PageItemComponent
   constructor() {
     super(
       `<li class="page__item">
-          <div class="item__header">
-            <h2 class="item__header-category">Heading</h2>
-            <button class="item__header-remove"><i class="fas fa-trash"></i></button>
-          </div>
           <div class="item__content"></div>
+          <button class="item__header-remove"><i class="fas fa-trash"></i></button>
       </li>`
     );
     const removeBtn = this.element.querySelector(

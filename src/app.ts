@@ -50,6 +50,16 @@ class App {
       TextSectionInput,
       (input: TextSectionInput) => new TodoComponent(input.title, input.body)
     );
+
+    const navbarMenu = document.querySelector(
+      '.header__navbar'
+    )! as HTMLUListElement;
+    const navbarButton = document.querySelector(
+      '.navbar__toggle-btn'
+    )! as HTMLButtonElement;
+    navbarButton.addEventListener('click', () => {
+      navbarMenu.classList.toggle('active');
+    });
   }
 
   private bindElementToDialog<T extends (MediaData | TextData) & Component>(
@@ -58,13 +68,15 @@ class App {
     makeSection: (input: T) => Component
   ) {
     const element = document.querySelector(selector)! as HTMLButtonElement;
-
+    const navbarMenu = document.querySelector(
+      '.header__navbar'
+    )! as HTMLUListElement;
     element.addEventListener('click', () => {
       const dialog = new InputDialog();
       const input = new InputComponent();
       dialog.addChild(input);
       dialog.attachTo(this.dialogRoot);
-
+      navbarMenu.classList.remove('active');
       // When dialog close button is clicked
       dialog.setOnCloseListener(() => {
         dialog.removeFrom(this.dialogRoot);

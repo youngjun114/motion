@@ -7,7 +7,7 @@ import { BaseComponent } from '../component.js';
 export class ImageComponent extends BaseComponent<HTMLElement> {
   constructor(title: string, url: string) {
     super(
-      `<section class="content"><div class="content__left">
+      `<section class="media__content"><div class="content__left">
           <img class="content__image"/>
       </div>
       <div class="content__right">

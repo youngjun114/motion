@@ -7,8 +7,8 @@ import { BaseComponent } from '../component.js';
 export class VideoComponent extends BaseComponent<HTMLElement> {
   constructor(title: string, url: string) {
     super(
-      `<section class="content"><div class="content__left">
-            <iframe class="content__video"></iframe>
+      `<section class="media__content"><div class="content__left">
+            <iframe class="content__video height="100%" width="100%"></iframe>
         </div>
         <div class="content__right">
             <h2 class="content__title"></h2>
@@ -19,8 +19,6 @@ export class VideoComponent extends BaseComponent<HTMLElement> {
       '.content__video'
     )! as HTMLIFrameElement;
     iframe.src = this.convertToEmbeddedURL(url);
-    iframe.width = '500px';
-    iframe.height = 'auto';
 
     const titleElement = this.element.querySelector(
       '.content__title'

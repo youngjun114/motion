@@ -7,7 +7,7 @@ import { BaseComponent } from '../component.js';
 export class NoteComponent extends BaseComponent<HTMLElement> {
   constructor(title: string, body: string) {
     super(
-      `<section class="content"><div class="content__left">
+      `<section class="text__content"><div class="content__left">
           <h2 class="note__title"></h2>
         </div>
         <div class="content__right">
