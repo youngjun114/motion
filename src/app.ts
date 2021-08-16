@@ -51,6 +51,28 @@ class App {
       (input: TextSectionInput) => new TodoComponent(input.title, input.body)
     );
 
+    // dummy variable
+    this.page.addChild(
+      new ImageComponent('Image Title', 'https://picsum.photos/500/300')
+    );
+    this.page.addChild(
+      new VideoComponent(
+        'Video Title',
+        'https://www.youtube.com/watch?v=CfPxlb8-ZQ0'
+      )
+    );
+    this.page.addChild(new NoteComponent('Note Title', 'Hello World'));
+
+    this.page.addChild(
+      new ImageComponent('Image Title', 'https://picsum.photos/500/300')
+    );
+
+    this.page.addChild(new NoteComponent('Note Title', 'Hello World'));
+
+    this.page.addChild(
+      new ImageComponent('Image Title', 'https://picsum.photos/500/300')
+    );
+
     const navbarMenu = document.querySelector(
       '.header__navbar'
     )! as HTMLUListElement;
@@ -77,6 +99,7 @@ class App {
       dialog.addChild(input);
       dialog.attachTo(this.dialogRoot);
       navbarMenu.classList.remove('active');
+
       // When dialog close button is clicked
       dialog.setOnCloseListener(() => {
         dialog.removeFrom(this.dialogRoot);

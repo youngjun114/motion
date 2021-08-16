@@ -242,7 +242,8 @@ body {
 
 .content__image {
   object-fit: contain;
-  max-width: 100%;
+  min-height: 100%;
+  width: 100%;
 }
 
 .content__right {
@@ -341,6 +342,29 @@ body {
 
 .dialog__submit-btn:hover {
   background-color: var(--color-orange-hover);
+}
+
+/* Drag and Drop */
+.mute-children * {
+  pointer-events: none;
+}
+
+.drag_start {
+  animation: dragStart 250ms;
+  opacity: 0.2;
+}
+
+.drop_area {
+  border: 2px solid var(--color-orange);
+}
+
+@keyframes dragStart {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+  }
 }
 
 @media only screen and (max-width: 968px) {
