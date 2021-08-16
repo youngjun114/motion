@@ -257,17 +257,6 @@ body {
   border: none;
 }
 
-.content__title {
-}
-
-.note__title,
-.todo__title {
-}
-
-.note_body,
-.todo__body {
-}
-
 .page {
   color: var(--color-white);
 }
@@ -389,6 +378,7 @@ body {
     width: 100%;
     flex-direction: column;
     text-align: center;
+    z-index: 1;
   }
 
   .navbar__item {
