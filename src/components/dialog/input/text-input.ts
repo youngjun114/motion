@@ -1,5 +1,5 @@
-import { BaseComponent } from '../../component.js';
-import { TextData } from '../dialog.js';
+import { BaseComponent } from '../../component';
+import { TextData } from '../dialog';
 
 export class TextSectionInput
   extends BaseComponent<HTMLElement>

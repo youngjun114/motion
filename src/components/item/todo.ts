@@ -2,7 +2,7 @@
  * Child class of BaseComponent
  */
 
-import { BaseComponent } from '../component.js';
+import { BaseComponent } from '../component';
 
 export class TodoComponent extends BaseComponent<HTMLElement> {
   constructor(title: string, body: string) {

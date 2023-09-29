@@ -2,7 +2,7 @@
  * Child class of BaseComponent
  */
 
-import { BaseComponent, Component } from '../component.js';
+import { BaseComponent, Component } from '../component';
 
 export interface Composable {
   addChild(child: Component): void;
