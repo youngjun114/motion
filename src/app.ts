@@ -1,20 +1,20 @@
-import { Component } from './components/component';
+import { Component } from './components/component.js';
 import {
   InputDialog,
   MediaData,
   TextData,
-} from './components/dialog/dialog';
-import { MediaSectionInput } from './components/dialog/input/media-input';
-import { TextSectionInput } from './components/dialog/input/text-input';
-import { ImageComponent } from './components/item/image';
-import { NoteComponent } from './components/item/note';
-import { TodoComponent } from './components/item/todo';
-import { VideoComponent } from './components/item/video';
+} from './components/dialog/dialog.js';
+import { MediaSectionInput } from './components/dialog/input/media-input.js';
+import { TextSectionInput } from './components/dialog/input/text-input.js';
+import { ImageComponent } from './components/item/image.js';
+import { NoteComponent } from './components/item/note.js';
+import { TodoComponent } from './components/item/todo.js';
+import { VideoComponent } from './components/item/video.js';
 import {
   Composable,
   PageComponent,
   PageItemComponent,
-} from './components/page/page';
+} from './components/page/page.js';
 
 type InputComponentConstructor<T = (MediaData | TextData) & Component> = {
   new (): T;

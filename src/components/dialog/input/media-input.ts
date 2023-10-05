@@ -1,5 +1,5 @@
-import { BaseComponent } from '../../component';
-import { MediaData } from '../dialog';
+import { BaseComponent } from '../../component.js';
+import { MediaData } from '../dialog.js';
 
 export class MediaSectionInput
   extends BaseComponent<HTMLElement>

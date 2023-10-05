@@ -2,7 +2,7 @@
  * Child class of BaseComponent
  */
 
-import { BaseComponent } from '../component';
+import { BaseComponent } from '../component.js';
 
 export class VideoComponent extends BaseComponent<HTMLElement> {
   constructor(title: string, url: string) {
